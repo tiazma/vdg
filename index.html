@@ -1,0 +1,120 @@
+<!-- Copyright (C) 2013  tiazma
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Vent de Guitare Player</title>
+
+  <link href="./css/grid_12.css"
+        charset="utf-8"
+        media="screen, projection"
+        type="text/css"
+        rel="stylesheet" >
+  <link href="./css/vdg_player.css?version=1"
+        charset="utf-8"
+        media="screen, projection"
+        type="text/css"
+        rel="stylesheet" >
+  <link href="./css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+
+  <script src="./js/jquery-1.9.1.js"></script>
+  <script src="./js/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="./js/vdg_player.js?version=1"></script>
+    
+</head>
+
+<body>
+
+  <div class="mainwrapper">
+    <div class="container container_12">
+
+      <div class="grid_2 push_5">
+        <button id="play" class="control" title="Play / Stop"></button>
+      </div>
+      
+      <div class="clear"></div>
+
+      <div id="deckA" class="grid_5">
+        <div class="with_border">
+
+        <div style="background: url('media/WINDYWORLD_VDG.png') no-repeat;" class="deck_picture ui-widget">
+          <div class="deck_info">
+            <h3 class="title">Windy World - Wind track</h3> 
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, alias, autem, incidunt officiis voluptatibus ex consequuntur nostrum ab quidem asperiores atque provident. Dolorem, fuga, eum doloremque excepturi aliquam cum aliquid. </p>
+          </div> 
+        </div>
+        </div>
+        <audio id="playerA" controls preload="none">
+          <!-- <source src="./media/FORCE_PB.ogg" type="audio/ogg"/> -->
+          <source src="#" type="audio/ogg"/>
+          <source src="./media/WINDYWORLD_VDG_LOW.mp3" type="audio/mpeg"/>
+          <p>
+            Your browser does not support the audio tag.
+            Please upgrade it or use a real modern browser.
+          </p>
+        </audio>
+      </div>
+
+      <div class="grid_1 slice">
+        <div class="amount">
+          <input type="text" id="amountA"/>
+        </div>
+        <div class="volume" id="volumeA" title="Change volume on track A"></div>
+        <button id="muteA" class="mute" value="on" title="Mute volume on track A"></button>
+      </div>
+
+      <div class="grid_1 slice">
+        <div class="amount">
+          <!-- <label for="amountB">Vol. B</label> -->
+          <input type="text" id="amountB"/>
+        </div>
+        <div id="volumeB" class="volume" title="Change volume on track B"></div>
+        <button id="muteB" class="mute" value="on" title="Mute volume on track B"></button>
+      </div>
+      
+
+      <div id="deckB" class="grid_5">
+        <div class="with_border">
+          <div style="background: url('media/WINDYWORLD_RY.png') no-repeat;" class="deck_picture ui-widget">
+            <div class="deck_info">
+              <h3 class="title">Windy World - Instrumental Track</h3> 
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, voluptate quae porro fugit rem? Amet culpa dolores est minima quia. Iusto, accusantium iste commodi voluptas sequi molestiae a laborum hic.</p>
+            </div> 
+          </div>
+        </div>
+        <audio id="playerB" controls preload="auto">
+          <!-- <source src="./media/FORCE_VX.ogg" type="audio/ogg"/> -->
+          <source src="./media/WINDYWORLD_RY_LOW.ogg" type="audio/ogg"/>
+          <source src="./media/WINDYWORLD_RY_LOW.mp3" type="audio/mpeg"/>
+          <p>
+            Your browser does not support the audio tag.
+            Please upgrade it or use a real modern browser.
+          </p>
+        </audio>
+      </div>
+
+      <div id="playername" class="grid_12 ui-widget">
+        <h1>
+          <span class="left">Vent de Guitare 2014</span> // <span class="right">Dual Tracks Player</span>
+        </h1>
+      </div>      
+
+    </div>
+  </div>
+
+</body>
+
+</html>
