@@ -26,15 +26,32 @@ $(document).ready(
     var song_id =  $_GET('song_id');
     $.getJSON( "media/" + song_id + '.json',
       function(json) {
+        // Set page title and description
+        if (json.song_title) {
+          $("title").html("Vent de Guitare Player. Now playing : " + json.song_title);
+        }
+        if (json.song_description) {
+          $("meta[name=description]").attr('content', json.song_description);
+        }
 
-        // Load tracks
-        debugger;
-        $("#playerA > source").attr('src', './media'+json.track_a_filename);
-        // Load images
+        var decks = ['A', 'B'];
+        for (var i = 0; i < 2; i++) {
+          // Load track files
+          $("#ogg"+decks[i]).attr('src', './media/'+json[decks[i]].filename+'.ogg');
+          $("#mp3"+decks[i]).attr('src', './media/'+json[decks[i]].filename+'.mp3');
+          // Actually load the data
+          $("#player"+decks[i]).attr('preload', 'auto');
+          // Load title
+          $("#title"+decks[i]).html(json[decks[i]].title);
+          // Load descrition
+          $("#description"+decks[i]).html(json[decks[i]].description);
+          // Load images
+          if (json[decks[i]].picture) {
+            $("#picture"+decks[i]).attr('style', "background: url('./media/"+json[decks[i]].picture+"')");
+          }
+        }
 
-        alert( "JSON Data: " + json.song_title);
       });
-    console.log(song_id);
 
     // Create buttons
     $( "button#play").button({
@@ -77,9 +94,6 @@ $(document).ready(
       }
     });
     $( "#amountB" ).val( $( "#volumeB" ).slider( "value" ) );
-
-    // Activate tooltip on attribute with title element
-    // $(document).tooltip(); 
 
     // Control logic
     $( ".control").click(

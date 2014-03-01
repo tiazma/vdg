@@ -42,7 +42,15 @@ body {
 .deck_picture {
     width: 372px;
     height: 277px;
+    background: no-repeat;
+}
 
+#pictureA {
+    background: url('../media/trackA.png') no-repeat;
+}
+
+#pictureB {
+    background: url('../media/trackB.png') no-repeat;
 }
 
 .deck h4 {

@@ -16,7 +16,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="utf-8" />
   <title>Vent de Guitare Player</title>
+  <meta name="description" content="Vent de Guitare / Full HTML5 CSS3 Dual Tracks Player" />
 
   <link href="./css/grid_12.css"
         charset="utf-8"
@@ -50,17 +52,16 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
       <div id="deckA" class="grid_5">
         <div class="with_border">
 
-        <div style="background: url('media/WINDYWORLD_VDG.png') no-repeat;" class="deck_picture ui-widget">
+        <div id="pictureA" class="deck_picture ui-widget">
           <div class="deck_info">
-            <h3 class="title">Windy World - Wind track</h3> 
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, alias, autem, incidunt officiis voluptatibus ex consequuntur nostrum ab quidem asperiores atque provident. Dolorem, fuga, eum doloremque excepturi aliquam cum aliquid. </p>
+            <h3 id="titleA" class="title">Title A</h3> 
+            <p id="descriptionA" class="description">Description A : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, alias, autem, incidunt officiis voluptatibus ex consequuntur nostrum ab quidem asperiores atque provident. Dolorem, fuga, eum doloremque excepturi aliquam cum aliquid. </p>
           </div> 
         </div>
         </div>
         <audio id="playerA" controls preload="none">
-          <!-- <source src="./media/FORCE_PB.ogg" type="audio/ogg"/> -->
-          <source src="#" type="audio/ogg"/>
-          <source src="./media/WINDYWORLD_VDG_LOW.mp3" type="audio/mpeg"/>
+          <source id="oggA" src="#" type="audio/ogg"/>
+          <source id="mp3A" src="#" type="audio/mpeg"/>
           <p>
             Your browser does not support the audio tag.
             Please upgrade it or use a real modern browser.
@@ -78,27 +79,25 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
       <div class="grid_1 slice">
         <div class="amount">
-          <!-- <label for="amountB">Vol. B</label> -->
           <input type="text" id="amountB"/>
         </div>
         <div id="volumeB" class="volume" title="Change volume on track B"></div>
         <button id="muteB" class="mute" value="on" title="Mute volume on track B"></button>
       </div>
       
-
       <div id="deckB" class="grid_5">
         <div class="with_border">
-          <div style="background: url('media/WINDYWORLD_RY.png') no-repeat;" class="deck_picture ui-widget">
-            <div class="deck_info">
-              <h3 class="title">Windy World - Instrumental Track</h3> 
-              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, voluptate quae porro fugit rem? Amet culpa dolores est minima quia. Iusto, accusantium iste commodi voluptas sequi molestiae a laborum hic.</p>
-            </div> 
-          </div>
+
+        <div id="pictureB" class="deck_picture ui-widget">
+          <div class="deck_info">
+            <h3 id="titleB" class="title">Title B</h3> 
+            <p id="descriptionB" class="description">Description B : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, alias, autem, incidunt officiis voluptatibus ex consequuntur nostrum ab quidem asperiores atque provident. Dolorem, fuga, eum doloremque excepturi aliquam cum aliquid. </p>
+          </div> 
         </div>
-        <audio id="playerB" controls preload="auto">
-          <!-- <source src="./media/FORCE_VX.ogg" type="audio/ogg"/> -->
-          <source src="./media/WINDYWORLD_RY_LOW.ogg" type="audio/ogg"/>
-          <source src="./media/WINDYWORLD_RY_LOW.mp3" type="audio/mpeg"/>
+        </div>
+        <audio id="playerB" controls preload="none">
+          <source id="oggB" src="#" type="audio/ogg"/>
+          <source id="mp3B" src="#" type="audio/mpeg"/>
           <p>
             Your browser does not support the audio tag.
             Please upgrade it or use a real modern browser.
@@ -110,6 +109,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <h1>
           <span class="left">Vent de Guitare 2014</span> // <span class="right">Dual Tracks Player</span>
         </h1>
+
       </div>      
 
     </div>
